@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Profiling of countries through the presentation of demographic, climatic and geographical data" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Rabia Iftikhar" />
+  <title>Gazetteer</title>
+
+  <!-- Easy Buttons -->
+<link rel="stylesheet" href="vendors/easyButton/all.css">
+<link rel="stylesheet" href="vendors/easyButton/easy-button.css">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="vendors/css/bootstrap.min.css" />
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="vendors/css/leaflet.css" />
+  <link rel="stylesheet" href="vendors/css/leaflet.extra-markers.min.css" />
+
+  <!-- Csss -->
+  <link rel="stylesheet" href="libs/css/style.css" />
+</head>
+
+<body>
+  <div class="loader-container">
+    <div class="loader"></div>
+  </div>
+  <div id="map_sibling_top">
+    <select class="form-control" id="country_list">
+      <option value="">Select Country</option>
+    </select>
+  </div>
+
+  <div id="country_info">
+    <div class="card m-10">
+      <div class="card-header">
+        <button class="btn btn-light" id="hide">
+          <i class="fas fa-times"></i>
+        </button>
+        <h2 id="country_name"></h2>
+      </div>
+      <div class="card-body pb-10 bg-light">
+        <table class="table table-bordered table-sm table-striped">
+          <tr>
+            <th>Flag</th>
+            <td>
+              <img src="" id="country_flag" />
+            </td>
+          </tr>
+          <tr>
+            <th>Capital</th>
+            <td id="country_capital"></td>
+          </tr>
+          <tr>
+            <th>Population</th>
+            <td id="country_population"></td>
+          </tr>
+          <tr>
+            <th>Currency</th>
+            <td id="country_currency"></td>
+          </tr>
+          <tr>
+            <th>Currency Symbol</th>
+            <td id="country_currency_symbol"></td>
+          </tr>
+          <tr>
+            <th>Wikipedia Page</th>
+            <td>
+              <a href="" target="_blank" class="text-dark" id="country_wikipedia">Click Here</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary pull_country_info_popup" id="show">
+    <i class="fas fa-info"></i>
+  </button>
+
+  <!-- Weather Data -->
+  <div class="modal" id="weatherModal">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Weather Details</h4>
+          <button class="btn btn-light closeWeather" data-dismiss="modal">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body" id="weather_data">
+          <div class="weather_card">
+            <h2 id="weather_city_name"></h2>
+            <div class="image_parent">
+              <img src="" width="80px" height="80px" />
+              <h1></h1>
+              <h3 id="weather_description"></h3>
+            </div>
+            <table class="table table-bordered table-sm">
+              <tr id="first_row" class="bg-secondary text-white"></tr>
+              <tr id="second_row"></tr>
+              <tr id="third_row"></tr>
+            </table>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+  </div>
+
+  <!-- Exchange Rate Data -->
+  <div class="modal" id="exchangeModal">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title ">Exchange Rate Details</h4>
+          <button class="btn btn-light closeExchange" data-dismiss="modal">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered table-sm table-striped">
+            <tr>
+              <th>€1 =</th>
+              <td id="euro"></td>
+            </tr>
+            <tr>
+              <th>$1 =</th>
+              <td id="dollar"></td>
+            </tr>
+            <tr>
+              <th>£1 =</th>
+              <td id="pound"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- News Data -->
+  <div class="modal fade" id="newsModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header ">
+          <h4 class="modal-title">Latest News</h4>
+          <button class="btn btn-light closeNews" data-dismiss="modal">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body" id="news_data"></div>
+      
+      </div>
+    </div>
+  </div>
+ 
+  
+  <div id="mapid"></div>
+
+  <!-- SCRIPT -->
+  <script src="vendors/js/jquery-3.6.0.min.js"></script>
+  <script src="https://kit.fontawesome.com/ded3a80e56.js" crossorigin="anonymous"></script>
+  <script src="vendors/js/leaflet.js"></script>
+  <!-- Easy Button   -->
+  <script src="vendors/easyButton/all.js"></script>
+  <script src="vendors/easyButton/easy-button.js"></script>
+<!--Leaflet-->
+  <script src="vendors/js/spin.min.js"></script>
+  <script src="vendors/js/leaflet.spin.min.js"></script>
+  <script src="vendors/js/leaflet.extra-markers.min.js"></script>
+  <script src="vendors/js/bootstrap.bundle.min.js"></script>
+  <script src="vendors/js/numeral.min.js"></script>
+<!--Script-->
+  <script src="libs/js/script.js"></script>
+</body>
+
+</html>
